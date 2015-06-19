@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title">{{ art.title }}</h2>
+            <p class="post-meta"> 
+                <a class="post-author" href="#">{{ art.datetime|date:"Y /m /d"}}</a> 
+                publish by 
+                <a class="post-author" href="#">{{ art.author }}</a> 
+            </p>
+        </header>
+    
+        <div class="post-description">
+            <p>
+                {{ art.content }} 
+            </p>
+        </div>
+    </section>
+</div>
+{% endblock %}

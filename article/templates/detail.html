@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_markdown %}
 
 {% block content %}
     <section class="post">
@@ -13,9 +14,10 @@
     
         <div class="post-description">
             <p>
-                {{ art.content }} 
+                {{ art.content | custom_markdown }}
             </p>
         </div>
     </section>
+    {% include "duoshuo.html"%}
 </div>
 {% endblock %}

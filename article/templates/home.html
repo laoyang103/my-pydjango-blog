@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+    {% for art in artlist %}
+        <section class="post">
+            <header class="post-header">
+                <img class="post-avatar" alt="Eric Ferraiuolo&#x27;s avatar" height="48" width="48" src="static/image/ericf-avatar.png">
+        
+                <h2 class="post-title">{{ art.title }}</h2>
+        
+                <p class="post-meta">
+                    By <a class="post-author" href="#">{{ art.author }}</a> under <a class="post-category post-category-js" href="#">{{ art.category }}</a>
+                </p>
+            </header>
+        
+            <div class="post-description">
+                <p>
+                    {{ art.content }} 
+                </p>
+            </div>
+        </section>
+    {% endfor %}
+</div>
+{% endblock %}

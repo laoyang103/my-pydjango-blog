@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load custom_markdown %}
 
 {% block content %}
     <section class="post">
@@ -14,7 +13,7 @@
     
         <div class="post-description">
             <p>
-                {{ art.content | custom_markdown }}
+                {{ art.content | safe }}
             </p>
         </div>
     </section>

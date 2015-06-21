@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Article(models.Model):
@@ -7,7 +8,7 @@ class Article(models.Model):
     author      = models.CharField(max_length=100)
     category 	= models.CharField(max_length=100, blank=True)
     datetime 	= models.DateTimeField(auto_now_add=True)
-    content 	= models.TextField(blank=True)
+    content 	= RichTextField('content')
 
     def __str__(self):
         return self.title

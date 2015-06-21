@@ -30,13 +30,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'article',
 )
 
@@ -83,3 +83,38 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = (
+    os.path.join(BASE_DIR, 'article/static/')
+)
+
+CKEDITOR_CONFIGS = {
+    'default': {
+         'toolbar': (
+            ['div','Source','-','Save','NewPage','Preview','-','Templates'],
+            ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'],
+            ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+            ['Form','Checkbox','Radio','TextField','Textarea','Select','Button', 'ImageButton','HiddenField'],
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+            ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Link','Unlink','Anchor'],
+            ['Image','Flash','CodeSnippet','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+            ['Styles','Format','Font','FontSize'],
+            ['TextColor','BGColor'],
+            ['Maximize','ShowBlocks','-','About', 'pbckcode'],
+        ),
+        "extraPlugins": "codesnippet",
+        "codeSnippet_languages": {
+            "C":"C",
+            "Bash":"Bash",
+            "Python": "Python"
+        },
+        "codeSnippet_theme": "monokai_sublime",
+    }
+}
+
+CKEDITOR_UPLOAD_PATH = "article/static/uploads/"
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+

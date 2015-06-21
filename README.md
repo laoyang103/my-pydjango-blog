@@ -13,7 +13,7 @@
 
     cd my-pydjango-blog
     virtualenv www
-    source www/bin/acitve
+    source www/bin/activate
 
 安装依赖 :
 

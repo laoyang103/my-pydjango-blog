@@ -1,21 +1,33 @@
 {% extends "base.html" %}
 
-{% block content %}
-<div class="posts">
-    {% for art in artlist %}
-        <section class="post">
-            <header class="post-header">
-                <img class="post-avatar" alt="Eric Ferraiuolo&#x27;s avatar" height="48" width="48" src="static/image/ericf-avatar.png">
-                <a href="{% url "detail" id=art.id %}"><h2 class="post-title">{{ art.title }}</h2></a>
-                <p class="post-meta">
-                    By <a class="post-author" href="#">{{ art.author }}</a> under <a class="post-category post-category-js" href="#">{{ art.category }}</a>
-                </p>
-            </header>
-        
-            <div class="post-description">
-                <p> {{ art.content | slice:'10'}} </p>
-            </div>
-        </section>
-    {% endfor %}
-</div>
+{% block title %}
+    Laoyang's Clean Blog
 {% endblock %}
+
+{% block subtitle %}
+    Hello Laoyang Blog Hello Laoyang Blog Hello Laoyang Blog
+{% endblock %}
+
+{% block content %}
+    {% for art in artlist %}
+        <div class="post-preview">
+            <a href="{% url "detail" id=art.id %}">
+                <h2 class="post-title">
+                    {{ art.title }}
+                </h2>
+                <h3 class="post-subtitle">
+                    {{ art.content | slice:'10'}}
+                </h3>
+            </a>
+            <p class="post-meta">Posted by <a href="#">{{ art.author }}</a> on {{ art.datetime }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+<!-- Pager -->
+<ul class="pager">
+    <li class="next">
+        <a href="#">Older Posts &rarr;</a>
+    </li>
+</ul>

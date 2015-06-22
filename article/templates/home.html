@@ -4,7 +4,7 @@
     Laoyang's Clean Blog
 {% endblock %}
 
-{% block subtitle %}
+{% block summary %}
     Hello Laoyang Blog Hello Laoyang Blog Hello Laoyang Blog
 {% endblock %}
 
@@ -15,10 +15,10 @@
                 <h2 class="post-title">
                     {{ art.title }}
                 </h2>
-                <h3 class="post-subtitle">
-                    {{ art.content | slice:'10'}}
-                </h3>
             </a>
+            <h3 class="post-subtitle">
+                {{ art.summary | safe }}
+            </h3>
             <p class="post-meta">Posted by <a href="#">{{ art.author }}</a> on {{ art.datetime }}</p>
         </div>
         <hr>

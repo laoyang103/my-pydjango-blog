@@ -10,6 +10,7 @@ class Article(models.Model):
     category 	= models.CharField(max_length=100, blank=True, default='No Category')
     datetime 	= models.DateTimeField(auto_now_add=True, default=datetime.now())
     content 	= RichTextField('content', default='context')
+    summary     = RichTextField('summary', default='summary')
 
     def __str__(self):
         return self.title

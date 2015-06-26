@@ -8,13 +8,13 @@ class Article(models.Model):
     title 	    = models.CharField(max_length=100, default='No Title')
     author      = models.CharField(max_length=100, default='admin')
     category 	= models.CharField(max_length=100, blank=True, default='No Category')
-    datetime 	= models.DateTimeField(auto_now_add=True, default=datetime.now())
+    datetime 	= models.DateTimeField(default=datetime.now())
+    summary     = models.TextField(max_length=200, blank=True, default='No Summary')
     content 	= RichTextField('content', default='context')
-    summary     = RichTextField('summary', default='summary')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
         path = reverse('detail', kwargs={'id': self.id})
-        return 'http://192.168.1.71%s' % path
+        return 'http://nafei.sinaapp.com%s' % path

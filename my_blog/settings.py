@@ -118,3 +118,5 @@ CKEDITOR_UPLOAD_PATH = "article/static/uploads/"
 
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
+PRE_PAGE_NUM = 5
+

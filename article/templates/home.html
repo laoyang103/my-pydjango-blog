@@ -1,33 +1,38 @@
 {% extends "base.html" %}
 
-{% block title %}
-    Laoyang's Clean Blog
+{% block heading %}
+    <h1>Nafei's BLOG</h1>
+    <hr class="small">
+    <span class="subheading">点滴记录那匪成长</span>
 {% endblock %}
 
-{% block summary %}
-    Hello Laoyang Blog Hello Laoyang Blog Hello Laoyang Blog
-{% endblock %}
-
+<!-- Main Content -->
 {% block content %}
-    {% for art in artlist %}
-        <div class="post-preview">
-            <a href="{% url "detail" id=art.id %}">
-                <h2 class="post-title">
-                    {{ art.title }}
-                </h2>
-            </a>
-            <h3 class="post-subtitle">
-                {{ art.summary | safe }}
-            </h3>
-            <p class="post-meta">Posted by <a href="#">{{ art.author }}</a> on {{ art.datetime }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {% for art in artlist %}
+                    <div class="post-preview">
+                        <a href="{% url "detail" id=art.id %}">
+                            <h2 class="post-title">
+                                {{ art.title }}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{ art.summary }}
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted by <a href="#">{{ art.author }}</a> {{ art.datetime }} </p>
+                    </div>
+                    <hr>
+                {% endfor %}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <hr>
-    {% endfor %}
+    </div>
+    <hr>
 {% endblock %}
-
-<!-- Pager -->
-<ul class="pager">
-    <li class="next">
-        <a href="#">Older Posts &rarr;</a>
-    </li>
-</ul>

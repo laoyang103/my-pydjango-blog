@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}
-    {{ art.title }}
-{% endblock %}
-
-{% block author %}
-    Posted by {{ art.author }} on 
-    {{ art.datetime|date:"Y /m /d"}} 
+{% block heading %}
+    <h1>{{ art.title }}</h1>
+    <h2 class="subheading">{{ art.summary }}</h2>
+    <span class="meta">
+        Posted by {{ art.author }} on {{ art.datetime|date:"Y /m /d"}} 
+    </span>
 {% endblock %}
 
 {% block content %}
-    {{ art.content | safe }}
-    {% include "duoshuo.html"%}
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    {{ art.content | safe }}
+                    {% include "duoshuo.html"%}
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
 {% endblock %}

@@ -32,4 +32,5 @@ def detail(request, id):
         art = Article.objects.get(id=str(id))
     except Article.DoesNotExist:
         raise Http404
-    return render(request, 'detail.html', {'art': art})
+    categorys = Article.objects.values('category').annotate(dcount=Count('category'))
+    return render(request, 'detail.html', {'art': art, 'categorys': categorys})

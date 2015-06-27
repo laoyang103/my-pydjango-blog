@@ -114,14 +114,13 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">CategoryName</a>
-                                </li>
-                                <li><a href="#">CategoryName</a>
-                                </li>
-                                <li><a href="#">CategoryName</a>
-                                </li>
-                                <li><a href="#">CategoryName</a>
-                                </li>
+                                {% for category in categorys %}
+                                    <li>
+                                        <a href="/list/1_{{ category.category }}">
+                                        {{ category.category }}&nbsp({{ category.dcount }})
+                                        </a>
+                                    </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

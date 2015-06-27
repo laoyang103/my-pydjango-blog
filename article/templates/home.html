@@ -25,7 +25,12 @@
         <!-- Pager -->
         <ul class="pager">
             <li class="next">
-                <a href="/list/{{ netx_page }}/">Older Posts &rarr;</a>
+                {% if next_page %}
+                    <a href="/list/{{ next_page }}_{{ cate }}/">Next Page&rarr;</a>
+                {% endif %}
+                {% if pre_page %}
+                    <a href="/list/{{ pre_page }}_{{ cate }}/">Pre Page&rarr;</a>
+                {% endif %}
             </li>
         </ul>
     </div>

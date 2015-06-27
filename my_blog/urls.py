@@ -9,6 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^$', 'article.views.home', name='home'),
-    url(r'^list/(?P<page>\d+)/$', 'article.views.list', name='list'),
+    url(r'^list/(?P<page>\d+)_(?P<cate>.*)/$', 'article.views.list', name='list'),
     url(r'^detail/(?P<id>\d+)/$', 'article.views.detail', name='detail'),
 )

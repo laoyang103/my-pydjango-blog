@@ -17,7 +17,10 @@ def list(request, page, cate):
     end = settings.PRE_PAGE_NUM * page
 
     # find artlist
-    art = Article.objects.filter(category=cate).order_by('-datetime')[start:end:]
+    if '' == cate:
+        art = Article.objects.order_by('-datetime')[start:end:]
+    else:
+        art = Article.objects.filter(category=cate).order_by('-datetime')[start:end:]
     # statistics categorys
     categorys = Article.objects.values('category').annotate(dcount=Count('category'))
 

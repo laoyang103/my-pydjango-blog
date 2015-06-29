@@ -3,7 +3,7 @@
 
 #概述
 基于  Django1.8  和  Django-Ckeditor  开发的 博客系统 ，实现了一个博客完整的功能。
-http://nafei.sinaapp.com/
+Live Demo: http://nafei.sinaapp.com/
 
 #安装运行
 安装virtualenv :

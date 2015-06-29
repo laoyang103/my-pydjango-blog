@@ -106,9 +106,10 @@ CKEDITOR_CONFIGS = {
         ),
         "extraPlugins": "codesnippet",
         "codeSnippet_languages": {
-            "C":"C",
-            "Bash":"Bash",
-            "Python": "Python"
+            "c":"c",
+            "cpp":"cpp",
+            "bash":"bash",
+            "python": "python"
         },
         "codeSnippet_theme": "monokai_sublime",
     }
